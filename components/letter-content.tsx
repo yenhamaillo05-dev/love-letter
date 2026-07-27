@@ -3,10 +3,10 @@
 import { Heart } from 'lucide-react'
 
 const paragraphs = [
-  'Depuis le jour où nos chemins se sont croisés, le monde a pris des couleurs que je ne connaissais pas. Ton sourire est devenu ma lumière du matin, et ta voix, la mélodie qui apaise mes soirs.',
-  'Je repense à tous ces instants, les grands comme les tout petits : nos rires sans raison, nos silences complices, nos rêves murmurés tard dans la nuit. Chacun d’eux est un trésor que je garde précieusement.',
-  'Avec toi, j’ai appris ce que veut dire aimer vraiment : c’est vouloir ton bonheur autant que le mien, c’est te choisir encore et encore, chaque jour, malgré tout.',
-  'Alors merci. Merci d’exister, merci de m’aimer comme je suis, merci de rendre la vie plus douce simplement en étant toi.',
+  'Le 7 avril 2026, le destin a posé ton regard dans le mien, et sans le savoir encore, ma vie a changé pour toujours. Ce jour-là, je ne rencontrais pas seulement une femme d’une beauté rare : je rencontrais celle qui allait devenir le battement de mon cœur.',
+  'Puis vint le 11 mai 2026, ce jour béni où nous avons décidé de marcher ensemble, main dans la main. C’est là que notre histoire a vraiment commencé, comme une promesse murmurée à l’univers, comme une évidence que rien ni personne ne pourrait défaire.',
+  'Depuis, chaque instant passé à tes côtés est un trésor. Ton sourire illumine mes matins les plus gris, ta voix apaise mes nuits les plus longues, et ta présence donne un sens à tout ce que je fais. Tu es ma paix, mon refuge, ma plus belle raison d’aimer.',
+  'Alors merci, mon Acsa Olivia, d’avoir croisé mon chemin ce 7 avril, et d’avoir choisi mon cœur ce 11 mai. Je te choisis à mon tour, encore et encore, aujourd’hui et pour tous les jours qui nous restent à écrire ensemble.',
 ]
 
 export function LetterContent() {
@@ -21,7 +21,7 @@ export function LetterContent() {
         </div>
 
         <h1 className="text-balance text-center font-serif text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
-          Mon amour,
+          Mon Acsa Olivia,
         </h1>
 
         <div className="mt-8 space-y-6">
