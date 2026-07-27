@@ -21,8 +21,8 @@ export function EnvelopeScene({ opened, onOpen }: EnvelopeSceneProps) {
         disabled={opened}
         aria-label="Ouvrir l’enveloppe"
         className={cn(
-          'group relative h-52 w-80 max-w-[86vw] cursor-pointer rounded-lg outline-none transition-transform duration-700 sm:h-60 sm:w-96',
-          !opened && 'animate-envelope-bob hover:scale-[1.03]',
+          'group relative h-52 w-80 max-w-[86vw] cursor-pointer touch-manipulation rounded-lg outline-none transition-transform duration-700 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4 focus-visible:ring-offset-background sm:h-60 sm:w-96',
+          !opened && 'animate-envelope-bob hover:scale-[1.03] active:scale-[0.99]',
           opened && 'pointer-events-none -translate-y-4 scale-95',
         )}
       >

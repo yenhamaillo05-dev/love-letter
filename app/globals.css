@@ -40,36 +40,43 @@
 
 :root {
   color-scheme: light;
-  --background: oklch(0.97 0.015 40);
-  --foreground: oklch(0.33 0.05 20);
+  /* Ivoire chaud */
+  --background: oklch(0.965 0.018 82);
+  --foreground: oklch(0.3 0.05 22);
 
-  --card: oklch(0.99 0.008 60);
-  --card-foreground: oklch(0.33 0.05 20);
+  --card: oklch(0.985 0.012 84);
+  --card-foreground: oklch(0.3 0.05 22);
 
-  --popover: oklch(0.99 0.008 60);
-  --popover-foreground: oklch(0.33 0.05 20);
+  --popover: oklch(0.985 0.012 84);
+  --popover-foreground: oklch(0.3 0.05 22);
 
-  --primary: oklch(0.62 0.14 16);
-  --primary-foreground: oklch(0.99 0.01 60);
+  /* Rouge profond, romantique */
+  --primary: oklch(0.56 0.17 22);
+  --primary-foreground: oklch(0.99 0.012 84);
 
-  --secondary: oklch(0.93 0.03 30);
-  --secondary-foreground: oklch(0.4 0.08 20);
+  --secondary: oklch(0.92 0.035 55);
+  --secondary-foreground: oklch(0.4 0.08 22);
 
-  --muted: oklch(0.94 0.02 40);
-  --muted-foreground: oklch(0.52 0.05 25);
+  --muted: oklch(0.93 0.022 70);
+  --muted-foreground: oklch(0.5 0.05 28);
 
-  --accent: oklch(0.9 0.05 25);
-  --accent-foreground: oklch(0.4 0.08 20);
+  --accent: oklch(0.91 0.05 40);
+  --accent-foreground: oklch(0.4 0.08 22);
 
-  --gold: oklch(0.76 0.1 80);
-  --gold-foreground: oklch(0.32 0.05 40);
+  /* Or lumineux */
+  --gold: oklch(0.78 0.12 84);
+  --gold-foreground: oklch(0.3 0.05 45);
 
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.88 0.03 35);
-  --input: oklch(0.9 0.025 35);
-  --ring: oklch(0.62 0.14 16);
+  --border: oklch(0.87 0.032 60);
+  --input: oklch(0.9 0.028 55);
+  --ring: oklch(0.56 0.17 22);
 
-  --radius: 0.75rem;
+  --radius: 0.9rem;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -134,6 +141,134 @@
   }
 }
 
+/* Chute lente des pétales de rose (translation verticale + rotation) */
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-12vh) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(112vh) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+/* Balancement horizontal doux des pétales */
+@keyframes petal-sway {
+  0%,
+  100% {
+    transform: translateX(calc(var(--sway, 24px) * -1));
+  }
+  50% {
+    transform: translateX(var(--sway, 24px));
+  }
+}
+
+/* Particules lumineuses dorées qui s'élèvent */
+@keyframes particle-rise {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-96vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Scintillement des particules */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Lueur pulsée pour accents dorés */
+@keyframes soft-glow {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.06);
+  }
+}
+
+.animate-petal-fall {
+  animation-name: petal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animate-petal-sway {
+  animation-name: petal-sway;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.animate-particle-rise {
+  animation-name: particle-rise;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.animate-twinkle {
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.animate-soft-glow {
+  animation: soft-glow 4s ease-in-out infinite;
+}
+
+/* Révélation élégante au défilement */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Texte doré raffiné */
+.text-gold-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--gold) 0%,
+    oklch(0.86 0.13 88) 40%,
+    var(--gold) 70%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .animate-float-up {
   animation-name: float-up;
   animation-timing-function: ease-in;
@@ -157,11 +292,24 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   .animate-float-up,
   .animate-envelope-bob,
   .animate-letter-in,
   .animate-fade-in-up,
-  .animate-vinyl-spin {
+  .animate-vinyl-spin,
+  .animate-petal-fall,
+  .animate-petal-sway,
+  .animate-particle-rise,
+  .animate-twinkle,
+  .animate-soft-glow {
     animation: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

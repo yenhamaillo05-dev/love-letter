@@ -25,9 +25,10 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#f6e6df',
+  themeColor: '#f7ecdb',
   width: 'device-width',
   initialScale: 1,
+  viewportFit: 'cover',
 }
 
 export default function RootLayout({
@@ -36,8 +37,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${nunito.variable}`}>
-      <body className="bg-background font-sans antialiased">
+    <html
+      lang="fr"
+      className={`${cormorant.variable} ${nunito.variable} bg-background`}
+    >
+      <body className="bg-background font-sans antialiased [-webkit-tap-highlight-color:transparent]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
