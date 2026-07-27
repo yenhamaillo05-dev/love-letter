@@ -8,8 +8,10 @@ import { MemoriesGallery } from '@/components/memories-gallery'
 import { MusicPlayer } from '@/components/music-player'
 import { OurSong } from '@/components/our-song'
 import { ResponseForm } from '@/components/response-form'
+import { WelcomeScreen } from '@/components/welcome-screen'
 
 export function LoveLetter() {
+  const [started, setStarted] = useState(false)
   const [opened, setOpened] = useState(false)
   const [showLetter, setShowLetter] = useState(false)
   const letterRef = useRef<HTMLDivElement | null>(null)
@@ -43,7 +45,13 @@ export function LoveLetter() {
       <FloatingHearts />
       <MusicPlayer />
 
-      <EnvelopeScene opened={opened} onOpen={handleOpen} />
+      {!started ? (
+        <WelcomeScreen onStart={() => setStarted(true)} />
+      ) : (
+        <div className="animate-fade-in-up">
+          <EnvelopeScene opened={opened} onOpen={handleOpen} />
+        </div>
+      )}
 
       {showLetter && (
         <section
