@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { EnvelopeScene } from '@/components/envelope-scene'
 import { FloatingHearts } from '@/components/floating-hearts'
 import { LetterContent } from '@/components/letter-content'
+import { MemoriesGallery } from '@/components/memories-gallery'
 import { MusicPlayer } from '@/components/music-player'
 import { ResponseForm } from '@/components/response-form'
 
@@ -49,6 +50,9 @@ export function LoveLetter() {
           className="relative z-10 flex flex-col gap-12 px-5 pb-24 sm:px-8"
         >
           <LetterContent />
+          <div className="animate-fade-in-up">
+            <MemoriesGallery />
+          </div>
           <div className="animate-fade-in-up">
             <ResponseForm />
           </div>
