@@ -6,6 +6,7 @@ import { FloatingHearts } from '@/components/floating-hearts'
 import { LetterContent } from '@/components/letter-content'
 import { MemoriesGallery } from '@/components/memories-gallery'
 import { MusicPlayer } from '@/components/music-player'
+import { OurSong } from '@/components/our-song'
 import { ResponseForm } from '@/components/response-form'
 
 export function LoveLetter() {
@@ -50,6 +51,9 @@ export function LoveLetter() {
           className="relative z-10 flex flex-col gap-12 px-5 pb-24 sm:px-8"
         >
           <LetterContent />
+          <div className="animate-fade-in-up">
+            <OurSong />
+          </div>
           <div className="animate-fade-in-up">
             <MemoriesGallery />
           </div>

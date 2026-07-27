@@ -125,6 +125,15 @@
   }
 }
 
+@keyframes vinyl-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-float-up {
   animation-name: float-up;
   animation-timing-function: ease-in;
@@ -143,11 +152,16 @@
   animation: fade-in-up 0.8s ease-out both;
 }
 
+.animate-vinyl-spin {
+  animation: vinyl-spin 8s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-float-up,
   .animate-envelope-bob,
   .animate-letter-in,
-  .animate-fade-in-up {
+  .animate-fade-in-up,
+  .animate-vinyl-spin {
     animation: none !important;
   }
 }
